@@ -1,5 +1,5 @@
 # Gesture Recognition System
-<img src="C:\Users\KIIT\Desktop\Sign_language\giphy.gif">
+<img src="https://github.com/TLxGHOST/Sign_language_detection/blob/main/giphy.gif">
 ## Overview
 This project involves creating a gesture recognition system that captures hand gestures using a webcam, stores labeled images for training, and utilizes a deep learning model to predict gestures in real time. The labels can also be passed to a Large Language Model (LLM) for contextual insights and suggestions.
 
