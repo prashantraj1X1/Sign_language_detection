@@ -37,9 +37,12 @@ pip install opencv-python mediapipe numpy tensorflow scikit-learn openai
 │       ├── 1.jpg
 │       ├── 2.jpg
 ├── saved_labels.txt             # File storing gesture labels
-├── model.h5                     # Trained gesture recognition model
-├── label_encoder_classes.npy    # Label encoder for mapping labels
-└── Final.ipynb                      # Main script for capturing, training, and predicting
+├── Models/                      # Folder containing labeled gesture images
+│   ├── model1/
+|   ├── model2/
+|   ├── model3/                  # Trained gesture recognition model
+├── label_class.npy              # Label encoder for mapping labels
+└── Final(Revised).ipynb         # Main script for capturing, training, and predicting
 ```
 
 ## Usage
