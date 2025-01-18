@@ -63,7 +63,7 @@ Use the captured data to train a CNN model:
 # In your script, call the train_model function
 train_model('CollectedData/', 'model.h5', 'label_encoder_classes.npy')
 ```
-This saves the trained model as `model.h5`(change the name as per the model to be used eg:- model1.h5,model2.h5,model3.h5) and label encoder as `label_class.npy`.
+This saves the trained model as `model.h5`(change the name as per the model to be used eg:- model1.h5, model2.h5, model3.h5) and label encoder as `label_class.npy`.
 
 ### 3. Real-Time Gesture Prediction
 Run the script for real-time prediction:
