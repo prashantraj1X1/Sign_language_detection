@@ -44,7 +44,8 @@ pip install opencv-python mediapipe numpy tensorflow scikit-learn openai
 ├── label_class.npy              # Label encoder for mapping labels
 └── Final(Revised).ipynb         # Main script for capturing, training, and predicting
 ```
-
+<img src="https://github.com/TLxGHOST/Sign_language_detection/blob/main/Collected DATA.png">
+**Real-Time Gesture Capture**
 ## Usage
 
 ### 1. Capturing Gestures
