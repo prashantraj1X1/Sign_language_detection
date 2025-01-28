@@ -106,5 +106,5 @@ real_time_prediction('model.h5', 'label_class.npy')
 
 ## Author
 - [Tejanshu Bhandari](https://github.com/TLxGHOST)
-
+- [Abhishek Tanwar](https://github.com/ABHITANWAR26)
 
