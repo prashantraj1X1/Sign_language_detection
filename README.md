@@ -104,3 +104,7 @@ real_time_prediction('model.h5', 'label_class.npy')
 - Mediapipe for hand tracking and landmarks.
 - TensorFlow/Keras for deep learning.
 
+## Author
+- [Tejanshu Bhandari](https://github.com/TLxGHOST)
+
+
