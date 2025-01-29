@@ -108,4 +108,5 @@ real_time_prediction('model.h5', 'label_class.npy')
 - [Tejanshu Bhandari](https://github.com/TLxGHOST)
 - [Abhishek Tanwar](https://github.com/ABHITANWAR26)
 - [Prashant Raj ](https://github.com/prashantraj1X1)
+- [Kumar Shahil](https://github.com/hithisthat)
 
