@@ -110,5 +110,6 @@ real_time_prediction('model.h5', 'label_class.npy')
 - [Prashant Raj ](https://github.com/prashantraj1X1)
 - [Kumar Shahil](https://github.com/hithisthat)
 - [Grishm Raj ](https://github.com/2228115grishm)
+- [Kumar Ashutosh](https://github.com/rudraAashutosh)
 
 
