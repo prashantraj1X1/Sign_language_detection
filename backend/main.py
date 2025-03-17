@@ -1,6 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 import numpy as np
 import cv2
+from sklearn.calibration import LabelEncoder
 import tensorflow as tf
 import mediapipe as mp
 import uvicorn
@@ -10,8 +11,9 @@ import google.generativeai as genai
 from fastapi.middleware.cors import CORSMiddleware
 # Load the model
 
-model = tf.keras.models.load_model("models/model2.h5")
-label_encoder = np.load("./models/label_class.npy", allow_pickle=True)
+model = tf.keras.models.load_model("./models/model3.h5")
+label_encoder = LabelEncoder()
+label_encoder.classes_ = np.load('./models/label_class.npy') 
 
 # Initialize Mediapipe for hand detection
 mp_hands = mp.solutions.hands
@@ -62,7 +64,7 @@ def process_image(image):
 
             predictions = model.predict(cropped_hand)
             gesture_label_encoded = np.argmax(predictions, axis=1)[0]
-            gesture_label = label_encoder[gesture_label_encoded]
+            gesture_label = label_encoder.inverse_transform([gesture_label_encoded])[0]
 
             return gesture_label
 
@@ -83,12 +85,28 @@ genai.configure(api_key="AIzaSyCzX4JF8MiHmeZR0beNcohgpS3Y29utEYo")
 
 @app.post("/generate_sentence/")
 async def generate_sentence(input_data: GestureInput):
-    gestures = " ".join(input_data.gestures)
+    print(f"Received Request: {input_data.gestures}")  # Debugging
 
-    response = genai.chat("Convert the following sign language words into a complete sentence: " + gestures)
-    sentence = response.text
+    if not input_data.gestures or len(input_data.gestures) == 0:
+        print("Error: No gestures provided.")
+        return {"error": "No gestures provided."}
+
+    gestures = " ".join(input_data.gestures).strip()
+    print(f"Debug - Gestures received: {gestures}")
+
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(
+        f"Create a natural human-like sentence using only these words: {gestures}. Do not add extra words or phrases. the sentence should be coherent and grammatically correct."
+    )
+
+    sentence = response.text.strip() if response.text else "Error generating sentence."
+    print(f"Debug - Gemini Response: {sentence}")  # Check what Gemini is returning
 
     return {"sentence": sentence}
+
+
+
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
