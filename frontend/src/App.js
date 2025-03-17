@@ -20,7 +20,8 @@ const App = () => {
     const handleKeyPress = (event) => {
       if (event.key === "s") {
         captureFrame();
-      } else if (event.key === "o") {
+      } 
+      else if (event.key === "o") {
         sendToLLM();
       }
       // a training model part needs to be implemented
@@ -78,6 +79,7 @@ const App = () => {
   };
   
   
+  
 
   // Function to send collected gestures to LLM
   const sendToLLM = async () => {
@@ -107,6 +109,7 @@ const App = () => {
     console.error("Error:", error);
   }
 };
+
 
 
   return (
