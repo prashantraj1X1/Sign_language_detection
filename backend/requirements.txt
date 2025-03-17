@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+numpy
+tensorflow
+pillow
+google-generativeai
