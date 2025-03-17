@@ -108,7 +108,7 @@ uvicorn main:app --reload
   - Displays predictions on the webcam feed.
 
 - **LLM Integration**:
-  - Still under considertation
+  - Basic help of Gemini API for LLM .
 
 ## Future Enhancements
 - Extend the dataset with more gestures and labels.
