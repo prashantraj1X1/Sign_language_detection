@@ -36,13 +36,17 @@ pip install opencv-python mediapipe numpy tensorflow scikit-learn openai
 │   ├── Label2/
 │       ├── 1.jpg
 │       ├── 2.jpg
-├── saved_labels.txt             # File storing gesture labels
-├── Models/                      # Folder containing labeled gesture images
+|            
+├── models/                      # Folder containing labeled gesture images
 │   ├── model1/
 |   ├── model2/
 |   ├── model3/                  # Trained gesture recognition model
 ├── label_class.npy              # Label encoder for mapping labels
 └── Final(Revised).ipynb         # Main script for capturing, training, and predicting
+└── README.md                    # Project overview and instructions
+└── frontend
+└── backend
+                 
 ```
 <img src="https://github.com/TLxGHOST/Sign_language_detection/blob/main/Collected DATA.png">
 **Real-Time Gesture Capture**
@@ -73,6 +77,21 @@ real_time_prediction('model.h5', 'label_class.npy')
 ```
 - The predicted label will be displayed on the webcam feed.
 - Press `'s'` to save the predicted label to `saved_labels.txt`.
+
+Further a basic frontend and backend has been developed using Node.js and express.js which uses the pretrained model to predict the gestures in real time and convert them into text and pass it to the backend where it can be used for further processing by the LLM model.
+
+-TO RUN THE FRONTEND
+```bash
+cd frontend
+npm install
+npm start
+```
+-TO RUN THE BACKEND
+```bash
+cd backend
+npm install
+uvicorn main:app --reload
+```
 
 ## Key Functions
 - **Gesture Capture**:
